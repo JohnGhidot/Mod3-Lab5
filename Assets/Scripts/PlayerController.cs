@@ -25,6 +25,6 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         dir = new Vector2(h, v);
-        _rb.MovePosition(_rb.position + (dir * speed * Time.deltaTime));
+        _rb.MovePosition(_rb.position + dir * (speed * Time.deltaTime));
     }
 }

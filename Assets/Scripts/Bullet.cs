@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour    
 {
-    [SerializeField] float speed = 0.5f;
+    [SerializeField] float speed = 4f;
     Rigidbody2D _rb;
 
 
@@ -16,14 +16,17 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        _rb.velocity = new Vector2(speed, 0);
+        //_rb.velocity = new Vector2(speed, 0);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.collider.CompareTag("Player"))
+        if (collision.collider.CompareTag("Enemy"))
         {
             Destroy(collision.gameObject);
+            Destroy(gameObject);
         }
     }
+
+    public float GetSpeed() => speed;
 }

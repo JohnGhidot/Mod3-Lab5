@@ -7,7 +7,6 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] float _speed;
     private PlayerController _playerController;
-    private Transform player;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -19,18 +18,13 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
-        _playerController = GetComponent<PlayerController>();       
+        _playerController = Object.FindObjectOfType<PlayerController>();
     }
 
 
     void Start()
     {
-        GameObject gameObjject = GameObject.FindGameObjectWithTag("Player");
-
-        if(gameObjject != null)
-        {
-            player = gameObject.transform;
-        }
+        
     }
 
     // Update is called once per frame
@@ -39,8 +33,10 @@ public class Enemy : MonoBehaviour
         EnemyMovement();
     }
 
-    void EnemyMovement()
+    public void EnemyMovement()
     {
-        transform.position = Vector2.MoveTowards(transform.position, player.position, _speed * Time.deltaTime); 
+        float dir = _speed * Time.deltaTime;
+        transform.position = Vector2.MoveTowards(transform.position, _playerController.transform.position, dir);
+        //transform.position = Vector2.MoveTowards(transform.position, player.position, _speed * Time.deltaTime);
     }
 }
