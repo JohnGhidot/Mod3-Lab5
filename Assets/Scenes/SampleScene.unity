@@ -881,7 +881,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1741747885}
   - component: {fileID: 1741747887}
-  - component: {fileID: 1741747886}
+  - component: {fileID: 1741747888}
   - component: {fileID: 1741747884}
   - component: {fileID: 1741747883}
   - component: {fileID: 1741747882}
@@ -1031,7 +1031,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1741747886
+--- !u!114 &1741747887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741747881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21b4ddfb577a9c4bbcc5f16104f056e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+--- !u!114 &1741747888
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1047,19 +1060,6 @@ MonoBehaviour:
   fireRange: 10
   firePoint: {fileID: 1741747885}
   _bulletPrefab: {fileID: 1815947897537612827, guid: fbc753ec715e22841901b214deaef6ec, type: 3}
---- !u!114 &1741747887
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1741747881}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c21b4ddfb577a9c4bbcc5f16104f056e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

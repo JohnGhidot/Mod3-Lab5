@@ -29,9 +29,9 @@ public class PlayerShooterController : MonoBehaviour
         {
             if (Time.time > _nextfireTime)
             {
-                Bullet _bulletClone = Instantiate(_bulletPrefab, transform.position, transform.rotation);
+                Bullet _bulletClone = Instantiate(_bulletPrefab, firePoint.position, firePoint.rotation);
                 Rigidbody2D rb = _bulletClone.GetComponent<Rigidbody2D>();
-                Vector2 dir = (enemy.transform.position - transform.position).normalized;
+                Vector2 dir = (enemy.transform.position - firePoint.position).normalized;
                 rb.AddForce(dir * _bulletClone.GetSpeed(), ForceMode2D.Impulse);
                 _nextfireTime = Time.time + fireRate;
             }
